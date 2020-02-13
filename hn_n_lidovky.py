@@ -18,7 +18,13 @@ def DenikN():
 	h3_N = soup_N.find_all("h3")
 #print(h3_N)
 	hlavni_zprava_N = h3_N[0]
-	hlavni_zprava_N_cleaned = hlavni_zprava_N.get_text()[:-20]
+	hlavni_zprava_N_cleaned1 = hlavni_zprava_N.get_text()[:-20]
+	cabrio = hlavni_zprava_N_cleaned1.find("cabrioST")
+	if cabrio > 0:
+		hlavni_zprava_N_cleaned = hlavni_zprava_N_cleaned1[:cabrio] #titulek jen po cabrio
+	else:
+		hlavni_zprava_N_cleaned = hlavni_zprava_N_cleaned1	
+
 	return("Deník N: " + hlavni_zprava_N_cleaned)
 
 #lidovky
