@@ -24,7 +24,12 @@ def DenikN():
 		hlavni_zprava_N_cleaned = hlavni_zprava_N_cleaned1[:cabrio] #titulek jen po cabrio
 	else:
 		hlavni_zprava_N_cleaned = hlavni_zprava_N_cleaned1	
-
+    odpad = "if (typeof"
+    if odpad not in hlavni_zprava_N_cleaned:
+        continue
+    else:
+        hlavni_zprava_N_cleaned = hlavni_zprava_N_cleaned.replace(odpad, " ")
+        
 	return("Deník N: " + hlavni_zprava_N_cleaned)
 
 #lidovky
