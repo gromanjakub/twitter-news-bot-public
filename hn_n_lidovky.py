@@ -6,12 +6,12 @@ def HN():
     get_HN = requests.get("https://ihned.cz/")
     source_HN = get_HN.content
     soup_HN = BeautifulSoup(source_HN, features="html.parser")#, "lxml")
-    h2_HN = soup_HN.find_all("h2")
+    h3_HN = soup_HN.find_all("h3")
   #v souvislosti s koronakrizí a snahou HN pomoct firmám a OSVČ, jsem musel udělat workaround
-    if "Hledám pomoc, jak zvládnout virovou krizi" in h2_HN[0]:
-        hlavni_zprava_HN = h2_HN[1]
+    if "Hledám pomoc, jak zvládnout virovou krizi" in h3_HN[0]:
+        hlavni_zprava_HN = h3_HN[1]
     else:
-    	hlavni_zprava_HN = h2_HN[0]
+    	hlavni_zprava_HN = h3_HN[0]
     return( "iHNed: " + hlavni_zprava_HN.get_text().strip())
 
 #denik N
@@ -37,13 +37,15 @@ def DenikN():
     return("Deník N: " + hlavni_zprava_N_cleaned)
 
 #lidovky
+
 def Lidovky():
     get_LN = requests.get("https://www.lidovky.cz/") 
     source_LN = get_LN.content
     soup_LN = BeautifulSoup(source_LN, features="html.parser")
-    h1_LN = soup_LN.find_all("h1")
-    hlavni_zprava_LN = h1_LN[1]
+    h3_LN = soup_LN.find_all("h3")
+    hlavni_zprava_LN = h3_LN[0]
     return("Lidovky: " + hlavni_zprava_LN.get_text().strip())
+
 
 HN()
 DenikN()

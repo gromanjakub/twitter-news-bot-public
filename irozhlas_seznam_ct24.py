@@ -29,7 +29,10 @@ def ct24():
 	soup_ct24 = BeautifulSoup(source_ct24, features="html.parser")
 	h2_ct24 = soup_ct24.find_all("h2")
 	#print(h2_ct24)
-	hlavni_zprava_ct24 = h2_ct24[2]
+	if (h2_ct24[2].get_text().strip() == "COVID-19 v ČR"):
+        hlavni_zprava_ct24 = h2_ct24[3]
+    else:
+        hlavni_zprava_ct24 = h2_ct24[2]
 	return( "ČT24: " + hlavni_zprava_ct24.get_text().strip())
 
 irozhlas()
