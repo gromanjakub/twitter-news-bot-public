@@ -44,4 +44,4 @@ if ((time.localtime()[3] >= 6) and (time.localtime()[3] <= 21)):
 		Tweet2()
 	time.sleep(10800)
 else:
-	time.sleep(60)
+	time.sleep(1800)
