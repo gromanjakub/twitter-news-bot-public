@@ -9,4 +9,4 @@ files hn-n-lidovky.py and irozhlas-seznam-ct24.py are scripts for scraping the w
 
 tweeterbot.py runs them and introduces time intervals
 
-finally, Procfile.txt and requirements.txt are files needed for deploying the project to heroku, where the bot is hosted
+finally, Procfile and requirements.txt are files needed for deploying the project to heroku, where the bot is hosted
