@@ -1,5 +1,5 @@
 # twitter-news-bot-public
-a twitter bot which scrapes several Czech news sites for major headlines
+
 
 ## this is a twitter bot which scrapes several Czech news sites for major headlines
 
